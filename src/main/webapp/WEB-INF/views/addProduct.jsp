@@ -10,7 +10,8 @@
 </head>
 <body>
 <section>
-    <div class="jumbotron">
+    <div class="jumbotron" >
+        <a href="<c:url value='/login' />" class="btn btn-danger btn-mini pull-right">logout</a>
         <div class="container">
             <h1>Products</h1>
             <p>Add products</p>
@@ -24,7 +25,7 @@
             <legend>Add new product</legend>
             <div class="form-group">
                 <label class="control-label col-lg-2 col-lg-2"
-                       for="productId">Product Id</label>
+                       for="productId"> <spring:message code= "addProduct.form.productId.label"/> </label>
                 <div class="col-lg-10">
                     <form:input id="productId" path="productId" type="text" cssClass="input-large"/>
                 </div>
@@ -33,12 +34,6 @@
                 <label class="control-label col-lg-2" for="description"> Description</label>
                 <div class="col-lg-10">
                     <form:textarea id="description" path="description" rows="2"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-lg-2" for="discontinued">Discontinued</label>
-                <div class="col-lg-10">
-                    <form:checkbox id="discontinued" path="discontinued"/>
                 </div>
             </div>
             <div class="form-group">
