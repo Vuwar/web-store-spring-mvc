@@ -7,11 +7,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <link rel="stylesheet"
           href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <title>Products</title>
+    <title>Product Detail</title>
 </head>
 <body>
 <section>
     <div class="jumbotron">
+        <div class="pull-right" style="padding-right:50px">
+            <a href="?id=${product.productId}&language=en" >English</a>|<a href="?id=${product.productId}&language=nl" >Dutch</a>
+        </div>
         <div class="container">
             <h1>Products</h1>
         </div>
@@ -26,16 +29,16 @@
             <h3>${product.name}</h3>
             <p>${product.description}</p>
             <p>
-                <strong>Item Code: </strong><span class="label label-warning">${product.productId}</span>
+                <strong><spring:message code="product.itemCode.label"/>: </strong><span class="label label-warning">${product.productId}</span>
             </p>
             <p>
-                <strong>Manufacturer:</strong> ${product.manufacturer}
+                <strong><spring:message code="product.manufacturer.label"/>:</strong> ${product.manufacturer}
             </p>
             <p>
-                <strong>Category:</strong> ${product.category}
+                <strong><spring:message code="product.category.label"/>:</strong> ${product.category}
             </p>
             <p>
-                <strong>Available units in stock:</strong> ${product.unitsInStock}
+                <strong><spring:message code="product.availableUnitsInStock.label"/>:</strong> ${product.unitsInStock}
             </p>
             <h4>${product.unitPrice} USD</h4>
             <p>

@@ -11,7 +11,11 @@
 <body>
 <section>
     <div class="jumbotron" >
-        <a href="<c:url value="/j_spring_security_logout"/>" class="btn btn-danger btn-mini pull-right">logout</a>
+        <a href="<c:url value="/j_spring_security_logout"/>" class="btn btn-danger btn-mini pull-right">Logout</a>
+        <div class="pull-right" style="padding-right:50px">
+            <a href="?language=en" >English</a>|<a href="?language=nl" >Dutch</a>
+        </div>
+
         <div class="container">
             <h1>Products</h1>
             <p>Add products</p>
@@ -31,13 +35,17 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-lg-2" for="description">Description</label>
+                <label class="control-label col-lg-2" for="description">
+                    <spring:message code= "addProduct.form.description.label"/>
+                </label>
                 <div class="col-lg-10">
                     <form:textarea id="description" path="description" rows="2"/>
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-lg-2" for="condition">Condition</label>
+                <label class="control-label col-lg-2" for="condition">
+                    <spring:message code= "addProduct.form.condition.label"/>
+                </label>
                 <div class="col-lg-10">
                     <form:radiobutton id="condition" path="condition" value="New" />New
                     <form:radiobutton id="condition" path="condition" value="Old" />Old

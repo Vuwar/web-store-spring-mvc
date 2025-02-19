@@ -118,6 +118,24 @@ public class Product {
         this.condition = condition;
     }
 
+    @XmlTransient
+    public MultipartFile getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(MultipartFile productImage) {
+        this.productImage = productImage;
+    }
+
+    @XmlTransient
+    public MultipartFile getUserManualPdf() {
+        return userManualPdf;
+    }
+
+    public void setUserManualPdf(MultipartFile userManualPdf) {
+        this.userManualPdf = userManualPdf;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -147,23 +165,5 @@ public class Product {
     @Override
     public String toString() {
         return "Product [productId=" + productId + ", name=" + name + "]";
-    }
-
-    @XmlTransient
-    public MultipartFile getProductImage() {
-        return productImage;
-    }
-
-    public void setProductImage(MultipartFile productImage) {
-        this.productImage = productImage;
-    }
-
-    @XmlTransient
-    public MultipartFile getUserManualPdf() {
-        return userManualPdf;
-    }
-
-    public void setUserManualPdf(MultipartFile userManualPdf) {
-        this.userManualPdf = userManualPdf;
     }
 }
