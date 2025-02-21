@@ -40,4 +40,5 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
         <servlet-name>DispatcherServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
 </web-app>

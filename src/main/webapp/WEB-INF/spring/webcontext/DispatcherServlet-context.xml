@@ -11,7 +11,7 @@
     http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
     <!--    <mvc:annotation-driven />-->
-    <mvc:annotation-driven enable-matrix-variables="true"/>
+    <mvc:annotation-driven enable-matrix-variables="true" validator="validator"/>
     <mvc:resources location="/resources/" mapping="/resources/**"/>
 
     <mvc:interceptors>
@@ -31,6 +31,10 @@
 
 
     <context:component-scan base-package="com.packt.webstore"/>
+
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <property name="validationMessageSource" ref="messageSource"/>
+    </bean>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"/>
@@ -75,6 +79,21 @@
     <bean id="localeResolver"
           class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
         <property name="defaultLocale" value="en"/>
+    </bean>
+
+    <bean id="productValidator" class="com.packt.webstore.validator.ProductValidator">
+        <property name = "springValidators">
+            <set>
+                <ref bean = "unitsInStockValidator"/>
+                <ref bean = "productImageValidator"/>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="unitsInStockValidator" class="com.packt.webstore.validator.UnitsInStockValidator"/>
+
+    <bean id="productImageValidator" class="com.packt.webstore.validator.ProductImageValidator">
+        <property name="allowedSize" value="10240000"/>
     </bean>
 
 </beans>
