@@ -1,20 +1,36 @@
 package com.packt.webstore.domain;
 
-public class Customer {
+import java.io.Serializable;
+import java.util.Objects;
+
+public class Customer implements Serializable {
+    private static final long serialVersionUID = 2284040482222162898L;
     private String customerId;
     private String name;
-    private String address;
-    private long noOfOrdersMade;
+    private final Address billingAddress;
+    private String phoneNumber;
 
     public Customer() {
         super();
+        this.billingAddress = new Address();
     }
 
-    public Customer(String customerId, String name, String address, long noOfOrdersMade) {
+    public Customer(String customerId, String name) {
+        this();
         this.customerId = customerId;
         this.name = name;
-        this.address = address;
-        this.noOfOrdersMade = noOfOrdersMade;
+    }
+
+    @Override
+    public final boolean equals(Object o) {
+        if (!(o instanceof Customer customer)) return false;
+
+        return Objects.equals(getCustomerId(), customer.getCustomerId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getCustomerId());
     }
 
     public String getCustomerId() {
@@ -33,19 +49,15 @@ public class Customer {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
+    public Address getBillingAddress() {
+        return billingAddress;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public long getNoOfOrdersMade() {
-        return noOfOrdersMade;
-    }
-
-    public void setNoOfOrdersMade(long noOfOrdersMade) {
-        this.noOfOrdersMade = noOfOrdersMade;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }
