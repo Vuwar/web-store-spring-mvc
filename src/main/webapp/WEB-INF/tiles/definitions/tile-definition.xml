@@ -15,15 +15,13 @@ Tiles Configuration 3.0//EN"
         <put-attribute name="title" value="Products" />
         <put-attribute name="heading" value="Products" />
         <put-attribute name="tagline" value="Available Products" />
-        <put-attribute name="content" value="/WEB-INF/views/products.jsp"
-        />
+        <put-attribute name="content" value="/WEB-INF/views/products.jsp"/>
     </definition>
     <definition name="products" extends="baseLayout">
         <put-attribute name="title" value="Products" />
         <put-attribute name="heading" value="Products" />
         <put-attribute name="tagline" value="Available Products" />
-        <put-attribute name="content" value="/WEB-INF/views/products.jsp"
-        />
+        <put-attribute name="content" value="/WEB-INF/views/products.jsp"/>
     </definition>
     <definition name="product" extends="baseLayout">
         <put-attribute name="title" value="Product" />

@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  backend:
+    image: ghcr.io/${GITHUB_REPO_OWNER}/webstore-backend-vugar-dev:${TAG}
+    container_name: webstore-backend-vugar-dev
+    ports:
+      - "8011:8080"  # Expose port 8080 of backend to port 8081 of the host
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev  # Set profile to dev
+    networks:
+      - webstore-backend-vugar-dev
+
+networks:
+  webstore-backend-vugar-dev:
+    driver: bridge

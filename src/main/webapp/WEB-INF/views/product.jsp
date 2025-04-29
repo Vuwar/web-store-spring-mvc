@@ -12,16 +12,16 @@
     <script src="${pageContext.request.contextPath}/resources/js/controllers.js"></script>"></script>
 </head>
 <body>
-<section>
-    <div class="jumbotron">
-        <div class="pull-right" style="padding-right:50px">
-            <a href="?id=${product.productId}&language=en" >English</a>|<a href="?id=${product.productId}&language=nl" >Dutch</a>
-        </div>
-        <div class="container">
-            <h1>Products</h1>
-        </div>
-    </div>
-</section>
+<%--<section>--%>
+<%--    <div class="jumbotron">--%>
+<%--        <div class="pull-right" style="padding-right:50px">--%>
+<%--            <a href="?id=${product.productId}&language=en" >English</a>|<a href="?id=${product.productId}&language=nl" >Dutch</a>--%>
+<%--        </div>--%>
+<%--        <div class="container">--%>
+<%--            <h1>Products</h1>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</section>--%>
 <section class="container" ng-app="cartApp">
     <div class="row">
         <div class="col-md-5">
