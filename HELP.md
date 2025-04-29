@@ -1,4 +1,4 @@
-docker create --name my-app-container -p 8011:8080 my-app:latest
+docker create --name web-store-container -p 8011:8080 my-app:latest
 
 [//]: # (Connecting server)
 ssh -p 392 student@161.97.105.143
